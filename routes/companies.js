@@ -20,8 +20,7 @@ router.get("/", async function (req, res, next) {
            FROM companies 
            ORDER BY name`
     );
-
-    return res.json({ companies: result.rows });
+    return res.status(200).json({ companies: result.rows });
   } catch (err) {
     return next(err);
   }
